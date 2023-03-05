@@ -22,8 +22,8 @@
 #include <sensor_msgs/MagneticField.h>
 #include <sensor_msgs/LaserScan.h>
 #include <diagnostic_msgs/DiagnosticArray.h>
-#include <turtlebot3_msgs/SensorState.h>
-#include <turtlebot3_msgs/VersionInfo.h>
+#include <romipi_msgs/SensorState.h>
+#include <romipi_msgs/VersionInfo.h>
 
 #define SOFTWARE_VERSION "1.0.0"
 #define FIRMWARE_VERSION "1.2.0"
@@ -81,16 +81,16 @@ void LDSMsgCallback(const sensor_msgs::LaserScan::ConstPtr &msg)
   setLDSDiagnosis(diagnostic_msgs::DiagnosticStatus::OK, "Good Condition");
 }
 
-void sensorStateMsgCallback(const turtlebot3_msgs::SensorState::ConstPtr &msg)
+void sensorStateMsgCallback(const romipi_msgs::SensorState::ConstPtr &msg)
 {
   if (msg->battery > 11.0)
     setBatteryDiagnosis(diagnostic_msgs::DiagnosticStatus::OK, "Good Condition");
   else
     setBatteryDiagnosis(diagnostic_msgs::DiagnosticStatus::WARN, "Charge!!! Charge!!!");
 
-  if (msg->button == turtlebot3_msgs::SensorState::BUTTON0)
+  if (msg->button == romipi_msgs::SensorState::BUTTON0)
     setButtonDiagnosis(diagnostic_msgs::DiagnosticStatus::OK, "BUTTON 0 IS PUSHED");
-  else if (msg->button == turtlebot3_msgs::SensorState::BUTTON1)
+  else if (msg->button == romipi_msgs::SensorState::BUTTON1)
     setButtonDiagnosis(diagnostic_msgs::DiagnosticStatus::OK, "BUTTON 1 IS PUSHED");
   else
     setButtonDiagnosis(diagnostic_msgs::DiagnosticStatus::OK, "Pushed Nothing");
@@ -101,7 +101,7 @@ void sensorStateMsgCallback(const turtlebot3_msgs::SensorState::ConstPtr &msg)
     setMotorDiagnosis(diagnostic_msgs::DiagnosticStatus::WARN, "Torque OFF");
 }
 
-void versionMsgCallback(const turtlebot3_msgs::VersionInfo::ConstPtr &msg)
+void versionMsgCallback(const romipi_msgs::VersionInfo::ConstPtr &msg)
 {
   static bool check_version = false;
 

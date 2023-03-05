@@ -15,7 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   sensor_msgs
   diagnostic_msgs
-  turtlebot3_msgs
+  romipi_msgs
 )
 
 ################################################################################

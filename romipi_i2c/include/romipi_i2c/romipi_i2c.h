@@ -32,7 +32,7 @@
 #include <tf/transform_broadcaster.h>
 #include <nav_msgs/Odometry.h>
 
-#include <turtlebot3_msgs/SensorState.h>
+#include <romipi_msgs/SensorState.h>
 
 
 #define WHEEL_RADIUS                    0.033     // meter
