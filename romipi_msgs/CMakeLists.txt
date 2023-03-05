@@ -54,6 +54,8 @@ add_message_files(
    FILES
    RomiPose.msg
    NameList.msg
+   SensorState.msg
+   VersionInfo.msg
 )
 
 ## Generate services in the 'srv' folder
