@@ -11,7 +11,7 @@ import rospy
 
 import sys
 for p in sys.path:
-    print p
+    print(p)
 
 from romipi_astar.romipi_driver import AStar
 

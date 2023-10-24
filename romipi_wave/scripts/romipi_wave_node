@@ -40,15 +40,15 @@ class ROSWaveNode():
         return
 
     def handle_action_complete(self, req):
-        print "action complete callback"
+        print("action complete callback")
         return (True, "Action Complete Recorded")
 
     def handle_is_active(self, req):
-        print "is active callback"
+        print("is active callback")
         return True
 
     def handle_get_wave(self, req):
-        print "get wave callback"
+        print("get wave callback")
         return -1
 
     def romipi_wave_node(self):
